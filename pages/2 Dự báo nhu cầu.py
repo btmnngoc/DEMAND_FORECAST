@@ -48,6 +48,8 @@ models = ['SARIMA', 'Neural Network', 'XGBoost', 'LSTM']
 # Chọn mô hình
 selected_model = st.selectbox("Chọn mô hình:", models, index=0)
 
+st.info("Đang cập nhật kết quả từ các mô hình khác")
+
 # Load và xử lý dữ liệu chỉ khi chọn SARIMA
 if selected_model == 'SARIMA':
     # Load danh sách mã từ các file trong folder SARIMA
@@ -170,6 +172,8 @@ if selected_model == 'SARIMA':
 
         # Trực quan biểu đồ
         st.subheader("Biểu Đồ Trực Quan")
+
+        st.info("Đang phát triển biểu đồ tổng quan xu hướng quá khứ và dự báo tương lai...")
         
         # Biểu đồ 1: Actual vs Predicted
         if 'Week' in df.columns and 'Actual' in df.columns and 'Predicted' in df.columns:
